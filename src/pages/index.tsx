@@ -1,116 +1,100 @@
-import Image from 'next/image'
-import {Inter} from 'next/font/google'
-import {useEffect, useLayoutEffect} from "react";
-import gsap from 'gsap';
+import { Inter } from "next/font/google";
+import { useLayoutEffect } from "react";
+import { TimelineMax, Expo } from "gsap";
+import $ from "jquery";
 
-const inter = Inter({subsets: ['latin']})
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-    useLayoutEffect(() => {
-        TweenMax.to(".block-1", 2, {
-            x: "-180",
-            y: "-100",
-            scale: "2.4",
-            ease: Expo.easeInOut,
-        });
+  useLayoutEffect(() => {
+    var t1 = new TimelineMax({ paused: true });
 
-        TweenMax.to(".block-2", 2, {
-            x: "-180",
-            y: "200",
-            scale: "1.2",
-            ease: Expo.easeInOut,
-        });
+    t1.to(".nav-container", 1, {
+      left: 0,
+      ease: Expo.easeInOut,
+    });
 
-        TweenMax.to(".block-3", 2, {
-            x: "180",
-            y: "-240",
-            scale: "1.6",
-            ease: Expo.easeInOut,
-        });
+    t1.staggerFrom(
+      ".menu > div",
+      0.8,
+      { y: 100, opacity: 0, ease: Expo.easeOut },
+      "0.1"
+    );
 
-        TweenMax.to(".block-4", 2, {
-            x: "280",
-            y: "240",
-            scale: "0.8",
-            ease: Expo.easeInOut,
-        });
+    t1.staggerFrom(
+      ".socials",
+      0.8,
+      { y: 100, opacity: 0, ease: Expo.easeOut },
+      "0.4"
+    );
 
-        TweenMax.to(".box", 2.4, {
-            y: "-100%",
-            ease: Expo.easeInOut,
-        });
+    t1.reverse();
+    $(document).on("click", ".menu-open", function () {
+      t1.reversed(!t1.reversed());
+    });
+    $(document).on("click", ".menu-close", function () {
+      t1.reversed(!t1.reversed());
+    });
+  }, []);
 
-        TweenMax.from(".circle-shape", 2.4, {
-            scale: "0",
-            ease: Expo.easeInOut,
-        });
-        TweenMax.from(".circle-shape-2", 2.4, {
-            scale: "0",
-            ease: Expo.easeInOut,
-        });
-        TweenMax.from(".circle-shape-3", 2.4, {
-            scale: "0",
-            ease: Expo.easeInOut,
-        });
-        TweenMax.from(".navbar > div", 1.6, {
-            opacity: 0,
-            y: 60,
-            ease: Expo.easeInOut,
-            delay: 0.6,
-        });
-        TweenMax.from(".site-logo", 1.6, {
-            opacity: 0,
-            y: 40,
-            ease: Expo.easeInOut,
-            delay: 0.6,
-        });
-        TweenMax.from(".showreel", 1.6, {
-            opacity: 0,
-            y: 40,
-            ease: Expo.easeInOut,
-            delay: 0.6,
-        });
-        TweenMax.staggerFrom(
-            ".site-menu > div",
-            1,
-            {
-                opacity: 0,
-                y: 60,
-                ease: Power2.easeOut,
-            },
-            0.2
-        );
-    }, [])
-
-    return (
-        <>
-            <div className="site-logo">mouthwash</div>
-            <div className="navbar">
-                <div className="site-info">photos / films</div>
-                <div className="site-menu">
-                    <div className="menu-item">projects</div>
-                    <div className="menu-item">about</div>
-                    <div className="menu-item">contact</div>
-                </div>
+  return (
+    <>
+      <div className="menu-open">menu</div>
+      <div className="nav-container">
+        <div className="menu-close">close</div>
+        <div className="socials">
+          <span>facebook</span>
+          <span>instagram</span>
+        </div>
+        <nav className="menu">
+          <div className="menu__item">
+            <a className="menu__item-link">Home</a>
+            <img className="menu__item-img" src="menu-img-one.jpg" />
+            <div className="marquee">
+              <div className="marquee__inner">
+                <span>Home - Home - Home - Home - Home - Home - Home</span>
+              </div>
             </div>
-            <div className="showreel">view showreel</div>
-            <div className="container">
-                <div className="wrapper-img">
-                    <div className="box"></div>
-                    <div>
-                        <img className="image" src="hero-img.jpeg"/>
-                    </div>
-                </div>
-                <div className="circle-shape"></div>
-                <div className="circle-shape-2"></div>
-                <div className="circle-shape-3"></div>
-                <div className="blocks">
-                    <div className="block-1 block">F</div>
-                    <div className="block-2 block">L</div>
-                    <div className="block-3 block">E</div>
-                    <div className="block-4 block">X</div>
-                </div>
+          </div>
+          <div className="menu__item">
+            <a className="menu__item-link">Showcase</a>
+            <img className="menu__item-img" src="menu-img-two.jpg" />
+            <div className="marquee">
+              <div className="marquee__inner">
+                <span>
+                  Showcase - Showcase - Showcase - Showcase - Showcase -
+                  Showcase - Showcase
+                </span>
+              </div>
             </div>
-        </>
-    )
+          </div>
+          <div className="menu__item">
+            <a className="menu__item-link">About</a>
+            <img className="menu__item-img" src="menu-img-three.jpg" />
+            <div className="marquee">
+              <div className="marquee__inner">
+                <span>
+                  About - About - About - About - About - About - About
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="menu__item">
+            <a className="menu__item-link">Contact</a>
+            <img className="menu__item-img" src="menu-img-four.jpg" />
+            <div className="marquee">
+              <div className="marquee__inner">
+                <span>
+                  Contact - Contact - Contact - Contact - Contact - Contact -
+                  Contact
+                </span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </>
+  );
 }
+
+/** */

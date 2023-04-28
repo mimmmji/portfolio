@@ -1,13 +1,15 @@
 import { Inter } from "next/font/google";
-import { useLayoutEffect } from "react";
+import {useLayoutEffect, useRef} from "react";
 import { TimelineMax, Expo } from "gsap";
-import $ from "jquery";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const menuOpenRef = useRef<HTMLDivElement>(null);
+  const menuCloseRef = useRef<HTMLDivElement>(null);
+
   useLayoutEffect(() => {
-    var t1 = new TimelineMax({ paused: true });
+    const t1 = new TimelineMax({ paused: true });
 
     t1.to(".nav-container", 1, {
       left: 0,
@@ -29,19 +31,28 @@ export default function Home() {
     );
 
     t1.reverse();
-    $(document).on("click", ".menu-open", function () {
-      t1.reversed(!t1.reversed());
-    });
-    $(document).on("click", ".menu-close", function () {
-      t1.reversed(!t1.reversed());
-    });
+
+    // menuOpenRef.current?.addEventListener("click", () => {
+    //     t1.reversed(!t1.reversed());
+    // });
+    // menuCloseRef.current?.addEventListener("click", () => {
+    //     t1.reversed(!t1.reversed());
+    // });
+
+
+    // $(document).on("click", ".menu-open", function () {
+    //   t1.reversed(!t1.reversed());
+    // });
+    // $(document).on("click", ".menu-close", function () {
+    //   t1.reversed(!t1.reversed());
+    // });
   }, []);
 
   return (
     <>
-      <div className="menu-open">menu</div>
+      <div ref={menuOpenRef} className="menu-open">menu</div>
       <div className="nav-container">
-        <div className="menu-close">close</div>
+        <div ref={menuCloseRef} className="menu-close">close</div>
         <div className="socials">
           <span>facebook</span>
           <span>instagram</span>

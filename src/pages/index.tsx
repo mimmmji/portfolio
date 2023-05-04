@@ -75,7 +75,7 @@ export default function Home() {
             <Link href="/home" legacyBehavior>
               <a className="menu__item-link">Home</a>
             </Link>
-            <img className="menu__item-img" src="/menu-img-one.jpg" />
+            <img className="menu__item-img" /*src="/menu-img-one.jpg"*/ />
             <div className="marquee">
               <div className="marquee__inner">
                 <span>Home - Home - Home - Home - Home - Home - Home</span>
@@ -86,7 +86,7 @@ export default function Home() {
             <Link href="/showcase" legacyBehavior>
               <a className="menu__item-link">Showcase</a>
             </Link>
-            <img className="menu__item-img" src="/menu-img-two.jpg" />
+            <img className="menu__item-img" /*src="/menu-img-two.jpg"*/ />
             <div className="marquee">
               <div className="marquee__inner">
                 <span>
@@ -100,7 +100,7 @@ export default function Home() {
             <Link href="/about" legacyBehavior>
               <a className="menu__item-link">About</a>
             </Link>
-            <img className="menu__item-img" src="/menu-img-three.jpg" />
+            <img className="menu__item-img" /*src="/menu-img-three.jpg"*/ />
             <div className="marquee">
               <div className="marquee__inner">
                 <span>
@@ -113,7 +113,7 @@ export default function Home() {
             <Link href="/contact" legacyBehavior>
               <a className="menu__item-link">Contact</a>
             </Link>
-            <img className="menu__item-img" src="/menu-img-four.jpg" />
+            <img className="menu__item-img" /*src="/menu-img-four.jpg"*/ />
             <div className="marquee">
               <div className="marquee__inner">
                 <span>

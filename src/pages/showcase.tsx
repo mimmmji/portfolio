@@ -47,9 +47,7 @@ export default function Showcase() {
         <h1 className="logo">SHOWCASE</h1>
       </div>
       <div className="container"></div>
-      <div className="content">
-        <img src="/hero.jpg" alt="" />
-      </div>
+      <div className="content">{/* <img src="/hero.jpg" alt="" /> */}</div>
     </>
   );
 }

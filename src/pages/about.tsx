@@ -47,9 +47,7 @@ export default function About() {
         <h1 className="logo">ABOUT</h1>
       </div>
       <div className="container"></div>
-      <div className="content">
-        <img src="/hero.jpg" alt="" />
-      </div>
+      <div className="content">{/* <img src="/hero.jpg" alt="" /> */}</div>
     </>
   );
 }

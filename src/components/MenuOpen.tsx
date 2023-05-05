@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { TimelineMax, Expo } from "gsap";
-export function MenuOpen() {
+
+export function MenuOpen({setOpen}: {setOpen: () => void}) {
   const menuOpenRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -29,13 +30,11 @@ export function MenuOpen() {
 
     menuOpenRef.current?.addEventListener("click", () => {
       t1.reversed(!t1.reversed());
-      document.querySelector(".nav")?.classList.remove("menu-closed");
-      document.querySelector(".nav")?.classList.add("menu-open");
     });
   }, []);
 
   return (
-    <div ref={menuOpenRef} className="menu-open">
+    <div ref={menuOpenRef} onClick={setOpen} className="menu-open">
       menu
     </div>
   );

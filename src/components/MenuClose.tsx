@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { TimelineMax, Expo } from "gsap";
 
-export function MenuClose() {
+export function MenuClose({setClose}: {setClose: () => void}) {
   const menuCloseRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -16,13 +16,11 @@ export function MenuClose() {
 
     menuCloseRef.current?.addEventListener("click", () => {
       t1.reversed(!t1.reversed());
-      document.querySelector(".nav")?.classList.add("menu-closed");
-      document.querySelector(".nav")?.classList.remove("menu-open");
     });
   }, []);
 
   return (
-    <div ref={menuCloseRef} className="menu-close">
+    <div ref={menuCloseRef} onClick={setClose} className="menu-close">
       close
     </div>
   );

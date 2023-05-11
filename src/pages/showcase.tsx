@@ -3,6 +3,7 @@ import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import Menu from "@/components/Menu";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,21 +27,9 @@ export default function Showcase() {
   return (
     <>
       <div className="nav">
-        <div className="items-left">
-          <Link href="/about" legacyBehavior>
-            <a>ABOUT</a>
-          </Link>
-          <Link href="/showcase" legacyBehavior>
-            <a>SHOWCASE</a>
-          </Link>
-          <Link href="/contact" legacyBehavior>
-            <a>CONTACT</a>
-          </Link>
-        </div>
+        {/* <div className="items-left"></div> */}
         <div className="items-right">
-          <Link href="/home" legacyBehavior>
-            <a>HOME</a>
-          </Link>
+          <Menu />
         </div>
       </div>
       <div className="logo-container">

@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { TimelineMax, Expo } from "gsap";
 
-export function MenuOpen({setOpen}: {setOpen: () => void}) {
+export function MenuOpen({ setOpen }: { setOpen: () => void }) {
   const menuOpenRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {

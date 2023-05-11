@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { TimelineMax, Expo } from "gsap";
 
-export function MenuClose({setClose}: {setClose: () => void}) {
+export function MenuClose({ setClose }: { setClose: () => void }) {
   const menuCloseRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {

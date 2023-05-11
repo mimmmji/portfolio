@@ -2,8 +2,8 @@ import { Inter } from "next/font/google";
 import React, { useLayoutEffect, useRef } from "react";
 import { TimelineMax, Expo } from "gsap";
 import Link from "next/link";
-import {MenuOpen} from "@/components/MenuOpen";
-import {MenuClose} from "@/components/MenuClose";
+import { MenuOpen } from "@/components/MenuOpen";
+import { MenuClose } from "@/components/MenuClose";
 import Menu from "@/components/Menu";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -47,12 +47,10 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div id="index">
       <Menu />
-      <main>
-
-      </main>
-    </>
+      <main></main>
+    </div>
   );
 }
 

@@ -6,25 +6,10 @@ import Link from "next/link";
 import Menu from "@/components/Menu";
 import anime from "animejs";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const inter = Inter({ subsets: ["latin"] });
 
 export default function About() {
   useLayoutEffect(() => {
-    ScrollTrigger.create({
-      animation: gsap.from(".logo", {
-        y: "50vh",
-        scale: 6,
-        yPercent: -50,
-      }),
-      scrub: true,
-      trigger: ".content",
-      start: "top bottom",
-      endTrigger: ".content",
-      end: "top center",
-    });
-
     var textWrapper = document.querySelector(".loader-text")!;
     textWrapper.innerHTML = textWrapper.textContent!.replace(
       /\S/g,
@@ -53,17 +38,30 @@ export default function About() {
 
     gsap.to(".loader-wrapper", 1, {
       scale: 1.5,
+      duration: 1,
       opacity: 0,
       display: "none",
       ease: "power3.inOut",
       delay: 2,
     });
 
+    gsap.from(".revealer", 1, {
+      width: "0",
+      ease: "power3.inOut",
+      delay: 3,
+    });
+
+    gsap.to(".revealer", 0.8, {
+      left: "100%",
+      ease: "power3.inOut",
+      delay: 4,
+    });
+
     gsap.to(".loader-text-wrapper", 0.2, {
       opacity: 0,
       display: "none",
       ease: "power3.inOut",
-      delay: 4,
+      delay: 4, // 로딩화면이 보여지는 시간 (초 단위)
     });
 
     gsap.from(".col-left", 1, {
@@ -124,9 +122,10 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="loader-text block" style={{ background: "black" }}>
+        <div className="loader-text block">
           <h1 className="loader-text">about</h1>
         </div>
+        <div className="revealer"></div>
       </div>
       <style jsx>{`
         * {
@@ -138,13 +137,14 @@ export default function About() {
         body {
           width: 100%;
           height: 100vh;
-          overflow-x: hidden;
+          overflow: hidden;
         }
 
         .main-container {
           position: relative;
           width: 100%;
           height: 100vh;
+          overflow: hidden;
         }
 
         .about-container {
@@ -156,12 +156,14 @@ export default function About() {
           overflow: hidden;
         }
 
-        .about-nav {
+         {
+          /* .about-nav {
           position: absolute;
           top: 0;
           width: 100%;
           border-bottom: 1px solid rgb(0, 0, 0, 0.1);
           display: flex;
+        } */
         }
 
         .hero-img {
@@ -260,6 +262,36 @@ export default function About() {
           color: rgb(60, 60, 60);
           margin-top: 4em;
         }
+        /*속성추가 */
+        .block {
+          background: black;
+          display: flex;
+
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100vh;
+        }
+
+        .loader-text {
+          background: black;
+        }
+
+        .loader-text-wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: #000;
+        }
+
+        .revealer {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: #988871;
+        }
 
         @media (max-width: 900px) {
           body,
@@ -279,15 +311,12 @@ export default function About() {
           .col {
             width: 100%;
           }
-
-          .nav-items:first-child,
-          .nav-items:last-child {
-            display: none;
-          }
         }
 
         .block {
-          background: black !important;
+           {
+            /* background: black; */
+          }
           display: flex;
           justify-content: center;
           align-items: center;
@@ -309,6 +338,20 @@ export default function About() {
           text-transform: uppercase;
           letter-spacing: 0.5em;
           color: white;
+        }
+
+        .loader-text .letter {
+          display: inline-block;
+          line-height: 1em;
+        }
+
+        .revealer {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: #988871;
         }
       `}</style>
     </>

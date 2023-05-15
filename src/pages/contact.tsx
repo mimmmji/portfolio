@@ -10,9 +10,9 @@ import { IonIcon } from "@ionic/react";
 import { starHalf } from "ionicons/icons";
 import Head from "next/head";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function Contact() {
   const form = useRef(null);
@@ -39,20 +39,20 @@ export default function Contact() {
     }
   };
 
-  useLayoutEffect(() => {
-    ScrollTrigger.create({
-      animation: gsap.from(".logo", {
-        y: "50vh",
-        scale: 6,
-        yPercent: -50,
-      }),
-      scrub: true,
-      trigger: ".content",
-      start: "top bottom",
-      endTrigger: ".content",
-      end: "top center",
-    });
-  }, []);
+  // useLayoutEffect(() => {
+  //   ScrollTrigger.create({
+  //     animation: gsap.from(".logo", {
+  //       y: "50vh",
+  //       scale: 6,
+  //       yPercent: -50,
+  //     }),
+  //     scrub: true,
+  //     trigger: ".content",
+  //     start: "top bottom",
+  //     endTrigger: ".content",
+  //     end: "top center",
+  //   });
+  // }, []);
 
   return (
     <>
@@ -207,6 +207,14 @@ export default function Contact() {
       </div>
 
       <style jsx>{`
+        .nav {
+          background: #161616;
+        }
+
+        .menu-open {
+          color: white !important;
+        }
+
         .content {
           background-color: white;
         }

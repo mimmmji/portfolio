@@ -9,7 +9,6 @@
 body {
   margin: 0;
   background: #161616;
-  overflow-x: hidden;
 }
 
 #index .menu-open {
@@ -18,7 +17,6 @@ body {
 
 .menu-open,
 .menu-close {
-  color: black;
   position: absolute;
   top: 0;
   right: 0;
@@ -41,6 +39,7 @@ body {
 }
 
 .nav-container {
+  top: 0;
   position: fixed;
   left: -100%;
   width: 100%;
@@ -190,7 +189,3 @@ a {
   background: #fff;
   position: relative;
 } */
-
-.loader-text .block {
-  background: black;
-}

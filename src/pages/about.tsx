@@ -99,8 +99,8 @@ export default function About() {
           <img src="/sunflower.jpg" alt="" />
         </div>
         <div className="about-container">
-          <div className="cols">
-            <div className="col col-left">
+          <div>
+            <div className="col col-left" style={{width: '100%'}}>
               <div className="copy">
                 <div className="header">2023</div>
                 <div className="sub-header">I'm frontend developer :)</div>
@@ -111,14 +111,6 @@ export default function About() {
                   2020.03 ~ ing 명지대학교 정보통신공학과 재학중
                 </div>
               </div>
-            </div>
-            <div className="col col-right">
-              {/* <div className="header">
-                Emotion
-                <br />
-                from the <br /> photo day <br />
-                no.8
-              </div> */}
             </div>
           </div>
         </div>

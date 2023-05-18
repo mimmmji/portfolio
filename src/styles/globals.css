@@ -149,7 +149,6 @@ a {
   align-items: center;
   padding: 0 4em;
   justify-content: space-between;
-  background: #fff;
   z-index: 999;
 }
 
@@ -172,7 +171,7 @@ a {
   padding: 1em;
   z-index: 1000;
 }
-/* 
+/*
 .content img {
   width: 100%;
 } */

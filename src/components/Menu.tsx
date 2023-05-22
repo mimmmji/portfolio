@@ -13,10 +13,7 @@ const Menu: FunctionComponent<Props> = (props) => {
       {!menuOpen && <MenuOpen setOpen={() => setMenuOpen(true)} />}
       <div className="nav-container">
         {menuOpen && <MenuClose setClose={() => setMenuOpen(false)} />}
-        <div className="socials">
-          <span>facebook</span>
-          <span>instagram</span>
-        </div>
+
         <nav className="menu">
           <div className="menu__item">
             <Link href="/showcase" legacyBehavior>

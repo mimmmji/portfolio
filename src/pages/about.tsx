@@ -23,7 +23,7 @@ export default function About() {
       opacity: [0, 1],
       easing: "easeOutExpo",
       duration: 1200,
-      delay: (el: HTMLElement, i: number) => 2400 + 30 * i,
+      delay: (el: HTMLElement, i: number) => 600 + 30 * i,
     });
 
     gsap.from(".loader-wrapper", 2, {
@@ -48,33 +48,33 @@ export default function About() {
     gsap.from(".revealer", 1, {
       width: "0",
       ease: "power3.inOut",
-      delay: 3,
+      delay: 1,
     });
 
     gsap.to(".revealer", 0.8, {
       left: "100%",
       ease: "power3.inOut",
-      delay: 4,
+      delay: 2,
     });
 
     gsap.to(".loader-text-wrapper", 0.2, {
       opacity: 0,
       display: "none",
       ease: "power3.inOut",
-      delay: 4, // 로딩화면이 보여지는 시간 (초 단위)
+      delay: 2, // 로딩화면이 보여지는 시간 (초 단위)
     });
 
     gsap.from(".col-left", 1, {
       left: "-100%",
       ease: "power3.inOut",
-      delay: 4.5,
+      delay: 2.5,
     });
 
     gsap.from(".col-left .copy > div", 1.5, {
       x: -40,
       opacity: 0,
       ease: "power3.inOut",
-      delay: 5,
+      delay: 3,
       stagger: {
         amount: 0.3,
       },
@@ -87,6 +87,7 @@ export default function About() {
       delay: 5.5,
     });
   }, []);
+
   return (
     <>
       <div className="nav">
@@ -99,7 +100,7 @@ export default function About() {
           <img src="/sunflower.jpg" alt="" />
         </div>
         <div className="about-container">
-          <div className="cols">
+          <div className={"cols"}>
             <div className="col col-left">
               <div className="copy">
                 <div className="header">2023</div>
@@ -112,17 +113,17 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className="col col-right">
-              {/* <div className="header">
-                Emotion
-                <br />
-                from the <br /> photo day <br />
-                no.8
-              </div> */}
-            </div>
           </div>
         </div>
-        <div className="loader-text block">
+        <div className="col col-right">
+          <div className="header">
+            {/*Emotion*/}
+            {/*<br />*/}
+            {/*from the <br /> photo day <br />*/}
+            {/*no.8*/}
+          </div>
+        </div>
+        <div className="loader-text-wrapper block">
           <h1 className="loader-text">about</h1>
         </div>
         <div className="revealer"></div>

@@ -1,18 +1,8 @@
-import { Inter } from "next/font/google";
-import React, { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { TimelineMax, Expo } from "gsap";
-import Link from "next/link";
-import { MenuOpen } from "@/components/MenuOpen";
-import { MenuClose } from "@/components/MenuClose";
-import Menu from "@/components/Menu";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+export function MenuOpen({ setOpen }: { setOpen: () => void }) {
   const menuOpenRef = useRef<HTMLDivElement>(null);
-  const menuCloseRef = useRef<HTMLDivElement>(null);
-
-  const [menuOpen, setMenuOpen] = React.useState(false);
 
   useLayoutEffect(() => {
     const t1 = new TimelineMax({ paused: true });
@@ -41,17 +31,11 @@ export default function Home() {
     menuOpenRef.current?.addEventListener("click", () => {
       t1.reversed(!t1.reversed());
     });
-    menuCloseRef.current?.addEventListener("click", () => {
-      t1.reversed(!t1.reversed());
-    });
   }, []);
 
   return (
-    <div id="index">
-      <Menu />
-      <main></main>
+    <div ref={menuOpenRef} onClick={setOpen} className="menu-open">
+      menu
     </div>
   );
 }
-
-/** */

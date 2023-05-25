@@ -34,10 +34,12 @@ export default function Contact() {
         <script
           type="module"
           src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+          async
         ></script>
         <script
           noModule
           src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+          async
         ></script>
       </Head>
       <div className="nav">

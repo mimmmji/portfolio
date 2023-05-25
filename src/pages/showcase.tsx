@@ -33,10 +33,19 @@ export default function Showcase() {
         </div>
       </div>
       <div className="logo-container">
-        <h1 className="logo">SHOWCASE</h1>
+        {/* <h1 className="logo">SHOWCASE</h1> */}
       </div>
       <div className="container"></div>
       <div className="content">{/* <img src="/hero.jpg" alt="" /> */}</div>
+      <style jsx>{`
+        .menu-open {
+          color: white !important;
+        }
+
+        .menu-close {
+          color: black !important;
+        }
+      `}</style>
     </>
   );
 }

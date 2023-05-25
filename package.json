@@ -30,5 +30,12 @@
   "devDependencies": {
     "@types/animejs": "^3.1.7",
     "@types/jquery": "^3.5.16"
+  },
+  "eslintConfig": {
+    "extends": "next",
+    "rules": {
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-page-custom-font": "off"
+    }
   }
 }

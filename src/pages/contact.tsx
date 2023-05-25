@@ -1,13 +1,6 @@
-import { Inter } from "next/font/google";
-import { useLayoutEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
 import Menu from "@/components/Menu";
-import { IonIcon } from "@ionic/react";
-import { starHalf } from "ionicons/icons";
 import Head from "next/head";
 
 export default function Contact() {
@@ -34,21 +27,6 @@ export default function Contact() {
         );
     }
   };
-
-  // useLayoutEffect(() => {
-  //   ScrollTrigger.create({
-  //     animation: gsap.from(".logo", {
-  //       y: "50vh",
-  //       scale: 6,
-  //       yPercent: -50,
-  //     }),
-  //     scrub: true,
-  //     trigger: ".content",
-  //     start: "top bottom",
-  //     endTrigger: ".content",
-  //     end: "top center",
-  //   });
-  // }, []);
 
   return (
     <>

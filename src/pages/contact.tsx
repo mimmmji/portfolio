@@ -34,10 +34,12 @@ export default function Contact() {
         <script
           type="module"
           src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+          async
         ></script>
         <script
           noModule
           src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+          async
         ></script>
       </Head>
       <div className="nav">
@@ -49,7 +51,7 @@ export default function Contact() {
 
       <div className="container">
         <div className="top-nav">
-          <p>Thank you for getting in touch! I'm here to assist you.</p>
+          <p>{`Thank you for getting in touch! I'm here to assist you.`}</p>
         </div>
 
         <div className="contact-marquee">
@@ -61,9 +63,9 @@ export default function Contact() {
         <div className="contact-section">
           <div className="contact-details col">
             <p>
-              Let's unlock together the next <br />
-              level of possibilities! <br />
-              Reach out.
+              {`Let's unlock together the next
+              level of possibilities!
+              Reach out.`}
             </p>
 
             <div className="social-media item">

@@ -190,7 +190,7 @@ export default function Contact() {
         .top-nav {
           width: 100%;
           border-bottom: 1px solid #fff;
-          font-size: 12px;
+          font-size: 15px;
           text-align: center;
           padding: 1em;
           font-weight: 300;

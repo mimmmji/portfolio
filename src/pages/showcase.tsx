@@ -2,28 +2,27 @@ import { Inter } from "next/font/google";
 import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
 import Menu from "@/components/Menu";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Showcase() {
-  useLayoutEffect(() => {
-    ScrollTrigger.create({
-      animation: gsap.from(".logo", {
-        y: "50vh",
-        scale: 6,
-        yPercent: -50,
-      }),
-      scrub: true,
-      trigger: ".content",
-      start: "top bottom",
-      endTrigger: ".content",
-      end: "top center",
-    });
-  }, []);
+  // useLayoutEffect(() => {
+  //   ScrollTrigger.create({
+  //     animation: gsap.from(".logo", {
+  //       y: "50vh",
+  //       scale: 6,
+  //       yPercent: -50,
+  //     }),
+  //     scrub: true,
+  //     trigger: ".content",
+  //     start: "top bottom",
+  //     endTrigger: ".content",
+  //     end: "top center",
+  //   });
+  // }, []);
   return (
     <>
       <div className="nav">

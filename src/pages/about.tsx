@@ -104,6 +104,7 @@ export default function About() {
             <div className="col col-left">
               <div className="copy">
                 <div className="header">2023</div>
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
                 <div className="sub-header">I'm frontend developer :)</div>
                 <div className="img-wrapper">
                   <img src="./menu-img-four.jpg" />
